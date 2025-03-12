@@ -1,0 +1,37 @@
+/* General styles */
+body {
+    background-color: skyblue; 
+    font-family: Arial, sans-serif;
+}
+
+/* Style for the heading */
+h1#heading {
+    color: purple; /* Orange color */
+    font-size: 3rem;
+    text-align: center;
+}
+
+/* Button styling */
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ensure the button is vertically centered within its container */
+}
+
+/* Button style */
+.btnstyle {
+    background-color: orange;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    position: relative; /* Fixes the button position */
+    display: inline-block; /* Prevents the button from shifting */
+}
+
+/* Button hover effect */
+a.waves-effect:hover {
+    background-color: darkorange;
+}
