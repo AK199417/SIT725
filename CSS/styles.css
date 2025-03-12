@@ -16,7 +16,7 @@ h1#heading {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%; /* Ensure the button is vertically centered within its container */
+    height: 100%;
 }
 
 /* Button style */

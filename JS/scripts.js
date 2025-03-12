@@ -13,7 +13,6 @@ function changeText() {
         if (color = colorText){        // Matching the color
         var heading = document.getElementById("heading");
         }
-        // Set the text and color
         heading.innerHTML = colorText; // Set the text (color name)
         heading.style.color = color; // Set the color
 
