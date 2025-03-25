@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SIT 725 Prac 3</title>
+  <meta name="description" content="Basic template for SIT 725 Prac 3">
+  <meta name="author" content="SitePoint">
+  
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper navbar-size">
+      <a href="#" class="brand-logo"><img class="user-image-size" src="images/connect.jpg" alt="User Image"/></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a target="_blank" href="https://www.linkedin.com/in/arulrajah-kumaraguruparar/">About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="main-body" style="background-image: url('images/bg.jpg'); background-size: cover;">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 center-align">
+          <h1>Connect Mobile Shop</h1>
+          <p class="flow-text"></p>
+          <div id="card-section" class="row"></div>
+          <div class="section">
+            <p class="flow-text">Lets Make Pre Order On New Mobile Phone Samsung S25</p>
+            <button id="showFormBtn" class="btn waves-effect waves-light red">Order Now</button>
+          </div>
+          <div id="formContainer">
+            <div class="card-panel">
+              <h4>Apply Now</h4>
+              <form id="applicationForm">
+                <div class="input-field">
+                  <input type="text" id="first_name" class="validate" required>
+                  <label for="first_name">First Name</label>
+                </div>
+                <div class="input-field">
+                  <input type="text" id="last_name" class="validate" required>
+                  <label for="last_name">Last Name</label>
+                </div>
+                <div class="input-field">
+                  <input type="email" id="email" class="validate" required>
+                  <label for="email">Email</label>
+                </div>
+                <button type="button" id="formSubmit" class="btn waves-effect waves-light green">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Custom JS -->
+  <script defer src="../js/scripts.js"></script>
+</body>
+</html>

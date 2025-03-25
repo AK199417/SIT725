@@ -1,0 +1,70 @@
+.navbar-size {
+    width: 95%;
+    margin: 0 auto;
+    background-color: #92a9bc;
+    }
+.nav-wrapper {
+        background-color:   #92a9bc; /* Ensure no conflicting styles */
+    }
+.user-image-size {
+    height: 64px;
+    }
+      
+.user-image-size {
+        height: 56px;
+        margin: 5px 10px;
+      }
+.main-body {
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    min-height: 100vh;
+    }
+
+@keyframes waveAnimation {
+    0% {
+          transform: rotate(0deg); /* Start from normal position */
+    }
+    25% {
+          transform: rotate(5deg); /* Slight rotation to the right */
+    }
+    50% {
+          transform: rotate(0deg); /* Back to the normal position */
+    }
+    75% {
+          transform: rotate(-5deg); /* Slight rotation to the left */
+    }
+    100% {
+          transform: rotate(0deg); /* Back to normal position */
+    }
+    }
+      
+h1 {
+    font-family: 'Roboto', sans-serif; /* A stylish font from Google Fonts */
+    color: #0d516c; /* Set text color */
+    font-size: 6rem; /* Adjust the font size */
+    text-align: center; /* Center the heading */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); /* Adds a shadow for depth */
+    margin-bottom: 30px;
+    padding: 10px;
+    animation: waveAnimation 2s ease-in-out infinite;
+    }
+
+
+#formContainer {
+    display: none;
+     margin-top: 30px;
+    }
+      
+.card-panel {
+    padding: 30px !important;
+    border-radius: 8px !important;
+    }
+      
+.input-field {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    }
+      
+.btn {
+    margin-top: 20px;
+    }
