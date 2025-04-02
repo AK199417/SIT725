@@ -1,0 +1,23 @@
+{
+  "name": "sit725-2025-t1-prac",
+  "version": "1.0.0",
+  "description": "sit 725 T1 week 4 prac",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AK199417/SIT725.git"
+  },
+  "author": "Arulrajah",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/AK199417/SIT725/issues"
+  },
+  "homepage": "https://github.com/AK199417/SIT725#readme",
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongoose": "^8.13.0"
+  }
+}

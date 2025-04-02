@@ -1,0 +1,50 @@
+.navbar-size {
+    width: 95%;
+    margin: 0 auto;
+    background-color: #92a9bc;
+}
+
+.nav-wrapper {
+    background-color: #92a9bc; /* Ensure no conflicting styles */
+}
+
+.user-image-size {
+    height: 56px;
+    margin: 5px 10px;
+}
+
+body {
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif; 
+    color: #0d516c; 
+    font-size: 6rem; 
+    text-align: center; 
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); 
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+#formContainer {
+    display: none;
+    margin-top: 30px;
+}
+
+.card-panel {
+    padding: 30px !important;
+    border-radius: 8px !important;
+}
+
+.input-field {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    margin-top: 20px;
+}

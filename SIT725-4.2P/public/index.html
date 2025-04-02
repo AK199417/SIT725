@@ -1,0 +1,72 @@
+<!-- Updated Project - Product Selection and Pre-order from Product Page with Stylish Home Page and Materialize Improvements -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect Mobile Shop</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 90vh;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      text-align: center;
+    }
+    .hero h3 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+    nav {
+      background-color: rgba(146, 169, 188, 0.85);
+    }
+    footer {
+      background-color: rgba(146, 169, 188, 0.85);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="index.html" class="brand-logo">Connect Mobile</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="about.html"><i class="material-icons left">info</i>About Us</a></li>
+        <li><a href="services.html"><i class="material-icons left">build</i>Services</a></li>
+        <li><a href="product.html"><i class="material-icons left">phone_android</i>Product</a></li>
+        <li><a href="contact.html"><i class="material-icons left">contacts</i>Contact</a></li>
+        <li><a href="dashboard.html"><i class="material-icons left">dashboard</i>Dashboard</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="hero z-depth-2">
+    <h3>Welcome to Connect Mobile Shop</h3>
+    <p>Pre-Order the Latest Mobile Phones Today!</p>
+    <a href="product.html" class="btn-large red pulse"><i class="material-icons left">shopping_cart</i>Click to Pre-Order</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Connect Mobile Shop</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
