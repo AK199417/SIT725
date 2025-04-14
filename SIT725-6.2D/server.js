@@ -12,39 +12,47 @@ app.use('/css', express.static('css'));
 // Handle GET request for calculation
 app.get('/add', (req, res) => {
     const { no1, no2 } = req.query;
-
-
-    const result = Number(no1) + Number(no2);
-    res.json({ result });
+    const a = Number(no1);
+    const b = Number(no2);
+    if (isNaN(a) || isNaN(b)) {
+        return res.status(400).json({ error: 'Invalid input' });
+    }
+    res.json({ result: a + b });
 });
 
 app.get('/subtract', (req, res) => {
     const { no1, no2 } = req.query;
-
-    const result = Number(no1) - Number(no2);
-    res.json({ result });
+    const a = Number(no1);
+    const b = Number(no2);
+    if (isNaN(a) || isNaN(b)) {
+        return res.status(400).json({ error: 'Invalid input' });
+    }
+    res.json({ result: a - b });
 });
 
 app.get('/multiply', (req, res) => {
     const { no1, no2 } = req.query;
-
-    const result = Number(no1) * Number(no2);
-    res.json({ result });
+    const a = Number(no1);
+    const b = Number(no2);
+    if (isNaN(a) || isNaN(b)) {
+        return res.status(400).json({ error: 'Invalid input' });
+    }
+    res.json({ result: a * b });
 });
 
 app.get('/divide', (req, res) => {
     const { no1, no2 } = req.query;
-
-    const n1 = Number(no1);
-    const n2 = Number(no2);
-
-    if (n2 === 0) {
-        return res.json({ error: 'Error: Division by zero' });
+    const a = Number(no1);
+    const b = Number(no2);
+    if (isNaN(a) || isNaN(b)) {
+        return res.status(400).json({ error: 'Invalid input' });
     }
-
-    const result = n1 / n2;
-    res.json({ result });
+    if (b === 0) {
+        return res.status(400).json({ error: 'Error: Division by zero' });
+    }
+    res.json({ result: a / b });
 });
+
 
 // Only start server if not in test mode
 if (require.main === module) {
