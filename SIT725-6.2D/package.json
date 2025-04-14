@@ -1,0 +1,27 @@
+{
+  "name": "sit725-2025-t2-prac",
+  "version": "1.0.0",
+  "description": "sit 725 T2 week 2 prac",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AK199417/SIT725.git"
+  },
+  "author": "Arulrajah",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/AK199417/SIT725/issues"
+  },
+  "homepage": "https://github.com/AK199417/SIT725#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.1.0"
+  }
+}

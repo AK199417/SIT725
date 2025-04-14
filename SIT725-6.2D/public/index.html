@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmatic Operations</title>
+    <link rel="stylesheet" href="/CSS/styles.css">
+</head>
+<body>
+    <div class="form-container">
+    <h1>Calculator</h1>
+
+    <!-- Form for calculator -->
+    <form id="calculator-form">
+    
+        <label for="no1">Type Number One:</label>
+        <input type="number" id="no1" name="no1" required step="any">  <!-- Here the step attribute is added so that decimal numbers can be input -->
+        
+        <label for="no2">Type Number Two:</label>
+        <input type="number" id="no2" name="no2" required step="any">
+        
+        <label for="operation">Select Operation:</label>
+        <select id="operation" name="operation">
+            <option value="add">Addition</option>
+            <option value="subtract">Subtraction</option>
+            <option value="multiply">Multiplication</option>
+            <option value="divide">Division</option>
+        </select>
+        
+        <button type="submit">Calculate</button>
+        <div id="output"></div> <!-- Display result -->
+    </div>
+    </form>
+
+    
+   
+
+   
+    <script>
+        async function calculate(event) {
+            event.preventDefault();  // Prevent the form from reloading the page
+
+            // Get the values from the form
+            const no1 = document.getElementById('no1').value;
+            const no2 = document.getElementById('no2').value;
+            const operation = document.getElementById('operation').value;
+
+            try {
+                // Send a request to the server with the form data
+                const url = `http://localhost:3000/${operation}?no1=${no1}&no2=${no2}`;
+        
+                const response = await fetch(url);
+                const result = await response.json(); // Parse the JSON response
+
+                if (response.ok) {
+                    // Display the result on the same page
+                    document.getElementById('output').textContent = `Result: ${result.result}`;
+                } else {
+                    // Handle errors if any
+                    document.getElementById('output').textContent = `Error: ${result.error}`;
+                }
+            } catch (error) {
+                // Handle connection or fetch errors
+                document.getElementById('output').textContent = `Error: Unable to connect to the server.`;
+            }
+        }
+
+        // Attach the function to the form submit event
+        document.getElementById('calculator-form').addEventListener('submit', calculate);
+    </script>
+</body>
+</html>
