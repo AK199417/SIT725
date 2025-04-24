@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Connect Mobile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    nav {
+      background-color: rgba(146, 169, 188, 0.85);
+    }
+    footer {
+      background-color: rgba(146, 169, 188, 0.85);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+    .dashboard-section {
+      margin-top: 80px;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 40px;
+      border-radius: 10px;
+    }
+    .logo-img {
+      height: 50px;
+      margin: 7px 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="index.html" class="brand-logo">
+        <img src="images/connect.jpg" alt="Logo" class="logo-img">
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="about.html"><i class="material-icons left">info</i>About Us</a></li>
+        <li><a href="services.html"><i class="material-icons left">build</i>Services</a></li>
+        <li><a href="product.html"><i class="material-icons left">phone_android</i>Product</a></li>
+        <li><a href="contact.html"><i class="material-icons left">contacts</i>Contact</a></li>
+        <li><a href="dashboard.html"><i class="material-icons left">dashboard</i>Dashboard</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container dashboard-section z-depth-2">
+    <h4 class="center-align"><i class="material-icons left">dashboard</i>Pre-Orders Dashboard</h4>
+    <table class="striped highlight">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Product</th>
+          <th>Variant</th>
+          <th>Storage</th>
+          <th>Color</th>
+        </tr>
+      </thead>
+      <tbody id="ordersTable">
+        <!-- Orders will load here -->
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Connect Mobile Shop</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    fetch('/orders')
+      .then(response => response.json())
+      .then(data => {
+        const table = document.getElementById('ordersTable');
+        data.forEach(order => {
+          const row = `<tr><td>${order.firstName}</td><td>${order.lastName}</td><td>${order.email}</td><td>${order.product}</td><td>${order.variant}</td><td>${order.storage}</td><td>${order.color}</td></tr>`;
+          table.innerHTML += row;
+        });
+      })
+      .catch(err => console.error(err));
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

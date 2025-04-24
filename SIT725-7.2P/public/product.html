@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product - Connect Mobile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    nav {
+      background-color: rgba(146, 169, 188, 0.85);
+    }
+    footer {
+      background-color: rgba(146, 169, 188, 0.85);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+    .product-section {
+      margin-top: 80px;
+    }
+    .logo-img {
+      height: 50px;
+      margin: 7px 10px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+    }
+    .form-section {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+      margin-bottom: 80px; 
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="index.html" class="brand-logo">
+        <img src="images/connect.jpg" alt="Logo" class="logo-img">
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="about.html"><i class="material-icons left">info</i>About Us</a></li>
+        <li><a href="services.html"><i class="material-icons left">build</i>Services</a></li>
+        <li><a href="product.html"><i class="material-icons left">phone_android</i>Product</a></li>
+        <li><a href="contact.html"><i class="material-icons left">contacts</i>Contact</a></li>
+        <li><a href="dashboard.html"><i class="material-icons left">dashboard</i>Dashboard</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container product-section">
+    <h4 class="center-align"><i class="material-icons left">phone_android</i>Our Products</h4>
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card hoverable" onclick="showForm('Samsung Galaxy S24')">
+          <div class="card-image">
+            <img src="images/samsung.jpg">
+          </div>
+          <div class="card-content center-align">
+            <span class="card-title">Samsung Galaxy S24</span>
+            <p>Latest Samsung flagship phone with cutting-edge features. Pre-order now!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6">
+        <div class="card hoverable" onclick="showForm('Apple iPhone 15')">
+          <div class="card-image">
+            <img src="images/iphone.jpg">
+          </div>
+          <div class="card-content center-align">
+            <span class="card-title">Apple iPhone 15</span>
+            <p>The newest iPhone series, best camera and performance. Available now.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="formContainer" class="form-section z-depth-2" style="display:none;">
+      <h5 class="center-align">Pre-Order Form for <span id="productName"></span></h5>
+      <form id="preOrderForm">
+        <input type="hidden" id="product" name="product">
+        <div class="input-field">
+          <input type="text" id="first_name" name="first_name" required pattern="^[A-Za-z]+$">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field">
+          <input type="text" id="last_name" name="last_name" required pattern="^[A-Za-z]+$">
+          <label for="last_name">Last Name</label>
+        </div>
+        <div class="input-field">
+          <input type="email" id="email" name="email" required>
+          <label for="email">Email</label>
+        </div>
+        <div class="input-field">
+          <select id="variant" name="variant" required></select>
+          <label>Mobile Variant</label>
+        </div>
+        <div class="input-field">
+          <select id="storage" name="storage" required></select>
+          <label>Storage Capacity</label>
+        </div>
+        <div class="input-field">
+          <select id="color" name="color" required></select>
+          <label>Mobile Color</label>
+        </div>
+        <button class="btn green" type="submit">Submit Pre-Order</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Connect Mobile Shop</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    const productOptions = {
+      'Samsung Galaxy S24': {
+        variant: ['Standard', 'Plus', 'Ultra'],
+        storage: ['128GB', '256GB', '512GB'],
+        color: ['Black', 'White', 'Blue']
+      },
+      'Apple iPhone 15': {
+        variant: ['Base', 'Plus', 'Pro', 'Pro Max'],
+        storage: ['128GB', '256GB', '512GB', '1TB'],
+        color: ['Black', 'White', 'Red', 'Blue']
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('select');
+      M.FormSelect.init(elems);
+    });
+
+    function populateOptions(product) {
+      const variant = document.getElementById('variant');
+      const storage = document.getElementById('storage');
+      const color = document.getElementById('color');
+
+      variant.innerHTML = '<option value="" disabled selected>Choose Variant</option>';
+      productOptions[product].variant.forEach(item => {
+        variant.innerHTML += `<option value="${item}">${item}</option>`;
+      });
+
+      storage.innerHTML = '<option value="" disabled selected>Select Storage</option>';
+      productOptions[product].storage.forEach(item => {
+        storage.innerHTML += `<option value="${item}">${item}</option>`;
+      });
+
+      color.innerHTML = '<option value="" disabled selected>Select Color</option>';
+      productOptions[product].color.forEach(item => {
+        color.innerHTML += `<option value="${item}">${item}</option>`;
+      });
+
+      M.FormSelect.init(document.querySelectorAll('select'));
+    }
+
+    function showForm(product) {
+      document.getElementById('productName').innerText = product;
+      document.getElementById('product').value = product;
+      populateOptions(product);
+      document.getElementById('formContainer').style.display = 'block';
+    }
+
+    document.getElementById('preOrderForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const firstName = document.getElementById('first_name').value.trim();
+      const lastName = document.getElementById('last_name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const variant = document.getElementById('variant').value;
+      const storage = document.getElementById('storage').value;
+      const color = document.getElementById('color').value;
+
+      const namePattern = /^[A-Za-z]+$/;
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!namePattern.test(firstName) || !namePattern.test(lastName)) {
+        M.toast({html: 'First & Last Name should contain only letters'});
+        return;
+      }
+      if (!emailPattern.test(email)) {
+        M.toast({html: 'Please enter a valid email'});
+        return;
+      }
+      if (!variant || !storage || !color) {
+        M.toast({html: 'Please select all options'});
+        return;
+      }
+
+      const formData = new URLSearchParams(new FormData(this));
+
+      fetch('/submit-order', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        M.toast({html: 'Order Submitted Successfully!'});
+        this.reset();
+        document.getElementById('formContainer').style.display = 'none';
+      })
+      .catch(error => {
+        M.toast({html: 'Error Submitting Order!'});
+      });
+    });
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>
